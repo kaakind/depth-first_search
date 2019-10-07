@@ -1,0 +1,20 @@
+#include <vector>
+
+void DFS (int current, const std::vector<std::vector<int>> graph, &std::vector<bool> visited, &std::vector<int> previous) {
+    visited[current] = true;
+    for (auto neighbour : graph[current]) {
+        if (!visited[neighbour]) {
+            previous[neighbour] = current;
+            DFS(neighbour, graph, visited, previous);
+        }
+    }
+}
+
+int main() {
+    std::vector<std::vector<int>> graph; // здесь будет храниться граф в виде списка смежных вершин
+    int n = graph.size();
+    std::vector<bool> visited(n);
+    std::vector<int> previous(n, -1);
+    int current = 0;
+    DFS(current, graph, visited, previous);
+}
