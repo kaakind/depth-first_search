@@ -12,9 +12,10 @@ void DFS (int current, const std::vector<std::vector<int>> graph, &std::vector<b
 
 int main() {
     std::vector<std::vector<int>> graph; // здесь будет храниться граф в виде списка смежных вершин
-    int n = graph.size();
+    auto n = graph.size();
     std::vector<bool> visited(n);
     std::vector<int> previous(n, -1);
     int current = 0;
     DFS(current, graph, visited, previous);
+    return 0;
 }
